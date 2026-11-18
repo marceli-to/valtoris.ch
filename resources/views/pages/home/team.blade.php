@@ -1,7 +1,7 @@
 {{-- The two partners. Hovering (or tapping) a photo shows the person's quote over it. --}}
 <section id="team" class="container-site flex scroll-mt-90 flex-col gap-40 pb-80 md:pb-160 lg:scroll-mt-130 lg:flex-row lg:gap-80" aria-labelledby="team-title">
 	<div class="flex shrink-0 flex-col gap-20 md:gap-28 lg:w-400">
-		<p class="eyebrow text-plum">Team</p>
+		<x-eyebrow class="text-plum">Team</x-eyebrow>
 		<h2 id="team-title" class="heading-section">Menschen, die mitdenken.</h2>
 		<p class="text-body">
 			Zwei Partner, ein Anspruch: Kompetenz statt Bauchgefühl und Zusammenarbeit auf Augenhöhe – unkompliziert, ehrlich und pragmatisch.
@@ -27,7 +27,7 @@
 					<div @class(['absolute inset-0 -z-10 bg-linear-to-b from-55%', 'from-plum/0 to-plum/90' => $plum, 'from-verdant/0 to-verdant/90' => ! $plum])></div>
 
 					<figcaption class="flex h-full flex-col justify-end gap-8 px-24 pb-24 text-white md:px-28">
-						<span @class(['eyebrow', '[--eyebrow-square:var(--color-plum-tint)]' => $plum, '[--eyebrow-square:var(--color-verdant-tint)]' => ! $plum])>{{ $person['role'] }}</span>
+						<x-eyebrow :square="$plum ? 'bg-plum-tint' : 'bg-verdant-tint'">{{ $person['role'] }}</x-eyebrow>
 						<span class="text-2xl font-medium tracking-[-0.01em]">{{ $person['name'] }}</span>
 					</figcaption>
 
@@ -50,10 +50,10 @@
 
 				@if ($profile)
 					<div class="h-px bg-verdant-tint"></div>
-					<a href="{{ asset($profile) }}" class="link-arrow self-start text-plum" target="_blank" rel="noopener">
-						Beraterprofil <span class="link-arrow-icon" aria-hidden="true">→</span>
-						<span class="sr-only">von {{ $person['name'] }} (PDF)</span>
-					</a>
+					<x-link-arrow :href="asset($profile)" class="text-plum" target="_blank" rel="noopener">
+						Beraterprofil
+						<x-slot:after><span class="sr-only">von {{ $person['name'] }} (PDF)</span></x-slot:after>
+					</x-link-arrow>
 				@endif
 			</article>
 		@endforeach

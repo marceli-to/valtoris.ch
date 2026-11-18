@@ -8,7 +8,7 @@
     "src": "_jost-300-500-normal-BNsXE3cm.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-DRlJC7rA.css",
+    "file": "assets/app-DXc4LSQ2.css",
     "name": "app",
     "names": [
       "app.css"
@@ -16,8 +16,13 @@
     "src": "resources/css/app.css",
     "isEntry": true,
     "assets": [
-      "assets/muster-Cq7OHBR_.svg"
+      "assets/muster-Cq7OHBR_.svg",
+      "assets/chevron-down-CtikNK8C.svg"
     ]
+  },
+  "resources/images/chevron-down.svg": {
+    "file": "assets/chevron-down-CtikNK8C.svg",
+    "src": "resources/images/chevron-down.svg"
   },
   "resources/images/muster.svg": {
     "file": "assets/muster-Cq7OHBR_.svg",

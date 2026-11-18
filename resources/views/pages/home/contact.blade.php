@@ -1,7 +1,7 @@
 <section id="kontakt" class="container-site scroll-mt-90 pb-64 md:pb-80 lg:scroll-mt-130" aria-labelledby="kontakt-title">
 	<div class="box bg-contact grid gap-40 pt-32 text-white md:pt-72 lg:grid-cols-[440px_1fr] lg:gap-96">
 		<div class="flex flex-col gap-24">
-			<p class="eyebrow [--eyebrow-square:var(--color-plum-tint)]">Kontakt</p>
+			<x-eyebrow square="bg-plum-tint">Kontakt</x-eyebrow>
 			<h2 id="kontakt-title" class="text-5xl font-medium tracking-[-0.015em] md:text-8xl">Jetzt Kontakt aufnehmen.</h2>
 			<p class="text-body text-white/85">
 				Wir freuen uns über eine unverbindliche Kontaktaufnahme – direkt bei der jeweiligen Ansprechperson oder über das Formular.

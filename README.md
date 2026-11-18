@@ -35,8 +35,8 @@ npm run build     # if you changed the design; commit public/build
 | `config/valtoris.php` | The content: company details, topic band, the seven services, the team (phones, emails, quotes, profile PDFs) |
 | `resources/views/pages/home.blade.php` | The home page; its sections are in `pages/home/` |
 | `resources/views/pages/impressum.blade.php`, `datenschutz.blade.php` | Legal pages, framed by `components/legal-page` |
-| `resources/views/components/` | Layout (head, meta, JSON-LD), header with the mobile menu, footer, `<x-picture>` |
-| `resources/css/app.css` | Theme: 1px spacing unit (`px-12` = 12px), the type scale (`text-xs` … `text-11xl`, no `text-base`), colours, and the components as `@utility` classes |
+| `resources/views/components/` | Layout (head, meta, JSON-LD), header with the mobile menu, footer, `<x-picture>`, and the UI pieces `<x-button>`, `<x-link-arrow>`, `<x-eyebrow>`, `<x-contact-field>` |
+| `resources/css/app.css` | Theme: 1px spacing unit (`px-12` = 12px), the type scale (`text-xs` … `text-11xl`, no `text-base`), colours; `@utility` classes only for layout, headings and the gradient backgrounds |
 | `resources/js/contact-form.js` | Posts the contact form in the background; without JavaScript it posts normally |
 | `app/Http/Controllers/ContactController.php` | → `ContactRequest` (validation + `Rules\Turnstile`) → `Actions\Contact\SubmitContactMessage` (stores, then mails) → `ContactMessageResource` |
 | `resources/images/` | Photo sources and `images.json`; `npm run images` renders AVIF/WebP/JPEG per width to `public/images` |
@@ -48,4 +48,4 @@ npm run build     # if you changed the design; commit public/build
 
 ## Code style
 
-Tabs, not spaces (see `.editorconfig`). Slim controllers; logic in `app/Actions`, validation in form requests, JSON through resources. Styles go through Tailwind, using `@apply` in `@utility` classes for anything reused. Pint isn't used because it always indents with spaces.
+Tabs, not spaces (see `.editorconfig`). Slim controllers; logic in `app/Actions`, validation in form requests, JSON through resources. Styles go through Tailwind. Reused UI (buttons, links, form fields) is a Blade component with the utilities inside, not a CSS class. Pint isn't used because it always indents with spaces.

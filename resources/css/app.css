@@ -115,10 +115,6 @@
 }
 
 /* Type */
-@utility eyebrow {
-	@apply flex items-center gap-14 text-xs font-medium tracking-[0.1em] uppercase before:size-8 before:shrink-0 before:bg-(--eyebrow-square,currentColor) before:content-[''];
-}
-
 @utility heading-hero {
 	@apply text-6xl leading-[1.02] font-medium tracking-[-0.02em] text-white md:text-10xl md:leading-[0.98] xl:text-11xl xl:tracking-[-0.03em];
 }
@@ -141,64 +137,6 @@
 
 @utility text-body {
 	@apply text-md md:text-lg;
-}
-
-/* Links and buttons */
-@utility nav-link {
-	@apply text-lg font-medium text-verdant hover:underline;
-}
-
-@utility link-arrow {
-	@apply inline-flex items-center gap-8 text-sm font-medium transition-[gap] duration-200 hover:gap-14 hover:underline;
-}
-
-@utility link-arrow-icon {
-	@apply inline-block text-md font-normal;
-}
-
-@utility btn {
-	@apply inline-flex cursor-pointer items-center gap-8 border px-20 py-10 text-lg leading-normal font-medium transition-colors duration-200 disabled:cursor-wait disabled:opacity-70;
-}
-
-@utility btn-outline {
-	@apply btn border-white text-white hover:bg-white hover:text-plum focus-visible:outline-white;
-}
-
-@utility btn-outline-plum {
-	@apply btn border-plum text-plum hover:bg-plum hover:text-white;
-}
-
-@utility btn-light {
-	@apply btn border-white bg-white text-plum hover:bg-transparent hover:text-white focus-visible:outline-white;
-}
-
-/*
- * Contact form. As in the design, a field is its label sitting on a line. The label rests
- * where the text goes and moves up once the field has focus or a value; it comes after
- * the input in the markup so it can follow the input's state (peer).
- */
-@utility field {
-	@apply relative flex flex-col gap-8;
-}
-
-@utility field-label {
-	@apply pointer-events-none absolute top-0 left-0 origin-top-left text-sm leading-[22px] text-white/85 transition-transform duration-200;
-}
-
-@utility field-label-floats {
-	@apply -translate-y-24 scale-87;
-}
-
-@utility field-input {
-	@apply w-full appearance-none rounded-none border-0 border-b border-white/50 bg-transparent px-0 pt-0 pb-10 text-lg text-white transition-colors placeholder:text-transparent focus:border-white focus:outline-none aria-invalid:border-amber;
-}
-
-@utility field-select {
-	@apply field-input cursor-pointer bg-[url("data:image/svg+xml,%3Csvg_xmlns='http://www.w3.org/2000/svg'_width='12'_height='8'_fill='none'%3E%3Cpath_d='m1_1.5_5_5_5-5'_stroke='%23fff'_stroke-width='1.5'/%3E%3C/svg%3E")] bg-position-[right_4px_top_10px] bg-no-repeat pr-24 *:text-text;
-}
-
-@utility field-error {
-	@apply text-xs text-amber;
 }
 
 /* Backgrounds. The radial layers mirror the gradients in the Figma file. */

@@ -2,7 +2,7 @@
 <section id="leistungen" class="container-site scroll-mt-90 pt-24 pb-80 md:pt-30 md:pb-160 lg:scroll-mt-130" aria-labelledby="leistungen-title">
 	<div class="flex flex-col gap-20 lg:flex-row lg:items-end lg:justify-between">
 		<div class="flex flex-col gap-28">
-			<p class="eyebrow text-plum">Leistungen</p>
+			<x-eyebrow class="text-plum">Leistungen</x-eyebrow>
 			<h2 id="leistungen-title" class="heading-page">Was wir bewegen.</h2>
 		</div>
 		<p class="text-body max-w-612 lg:pb-4">
@@ -33,12 +33,10 @@
 		@endforeach
 
 		<li class="bg-cta flex min-h-280 flex-col justify-between gap-40 px-24 py-32 text-white md:px-28 md:pt-45 md:pb-40">
-			<p class="eyebrow [--eyebrow-square:var(--color-verdant-tint)]">Ihr Thema?</p>
+			<x-eyebrow square="bg-verdant-tint">Ihr Thema?</x-eyebrow>
 			<div class="flex flex-col gap-20">
 				<p class="text-2xl font-medium tracking-[-0.005em]">Noch nicht das Richtige dabei? Interesse geweckt?</p>
-				<a href="#kontakt" class="link-arrow self-start">
-					Jetzt Kontakt aufnehmen <span class="link-arrow-icon" aria-hidden="true">→</span>
-				</a>
+				<x-link-arrow href="#kontakt">Jetzt Kontakt aufnehmen</x-link-arrow>
 			</div>
 		</li>
 	</ul>

@@ -19,9 +19,9 @@
 
 		<nav aria-label="Hauptnavigation" class="hidden items-center gap-44 lg:flex">
 			@foreach ($links as $anchor => $label)
-				<a href="{{ route('home') }}#{{ $anchor }}" class="nav-link">{{ $label }}</a>
+				<a href="{{ route('home') }}#{{ $anchor }}" class="text-lg font-medium text-verdant hover:underline">{{ $label }}</a>
 			@endforeach
-			<a href="{{ route('home') }}#kontakt" class="btn-outline-plum">Kontakt</a>
+			<x-button :href="route('home').'#kontakt'" variant="outline-plum">Kontakt</x-button>
 		</nav>
 
 		<button
@@ -43,14 +43,15 @@
 		x-show="open"
 		x-cloak
 		x-transition.opacity.duration.200ms
-		x-trap.noscroll="open"
+		x-trap="open"
 		role="dialog"
 		aria-modal="true"
 		aria-label="Menü"
-		class="fixed inset-0 z-50 flex flex-col justify-between overflow-y-auto bg-white lg:hidden"
+		class="fixed inset-0 z-50 flex flex-col justify-between overflow-y-auto overscroll-contain bg-white lg:hidden"
 	>
 		<div class="flex flex-col gap-40">
-			<div class="flex items-center justify-between px-20 pt-18 pb-10">
+			{{-- Same box as the header row above, so the logo stays put when the menu opens. --}}
+			<div class="container-site flex items-center justify-between py-20">
 				<a href="{{ route('home') }}" class="block w-124" aria-label="valtoris – zur Startseite">
 					<img src="{{ asset('images/logo-valtoris.svg') }}" alt="" width="207" height="66" class="h-auto w-full">
 				</a>
@@ -68,7 +69,7 @@
 			</nav>
 
 			<div class="px-20 pt-8">
-				<a href="{{ route('home') }}#kontakt" @click="open = false" class="btn-outline-plum">Kontakt</a>
+				<x-button :href="route('home').'#kontakt'" variant="outline-plum" @click="open = false">Kontakt</x-button>
 			</div>
 		</div>
 

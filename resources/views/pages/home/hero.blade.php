@@ -39,7 +39,7 @@
 				<p class="text-body max-w-540 text-white/85">
 					Wir verbinden HR und IT, Mensch und Organisation. Ob SAP HCM, Cloud-Systeme oder Payroll: Wir schaffen Klarheit, vereinfachen Prozesse und begleiten Veränderung – pragmatisch, partnerschaftlich und technologiegestützt.
 				</p>
-				<a href="#leistungen" class="btn-outline">Leistungen entdecken</a>
+				<x-button href="#leistungen">Leistungen entdecken</x-button>
 			</div>
 		</div>
 
