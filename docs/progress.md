@@ -8,7 +8,7 @@ What has been done, newest first. What's still open is in `docs/missing.md`.
 
 - axe-core (WCAG 2.2 AA) on all pages, desktop and mobile, menu open and form with errors: no violations of our own (only Herd's local dev badge).
 - Eyebrow square centred on the capitals: it hangs on the text baseline (raised 0.9px) instead of being flex-centred next to the label, so square and letters round to the same screen pixels wherever the eyebrow lands (checked at 1× and 2×, desktop and mobile).
-- Links: underline at 50% of the link colour and 4px below the text (Chrome draws no underline under 1px, so this is how it gets finer); arrow links underline only the label, not the arrow. Footer «Design by stoz» links to https://stoz.ch.
+- Links: underline at 50% of the link colour and 4px below the text (Chrome draws no underline under 1px, so this is how it gets finer); arrow links underline only the label, not the arrow. Footer «Design by stoz» and Impressum «Gestaltung: stoz» link to https://stoz.ch.
 - The topic band pauses while the pointer is over it (`hover:[animation-play-state:paused]`); it already stopped for reduced motion.
 
 ### robots.txt per environment
