@@ -1,4 +1,4 @@
-<section id="kontakt" class="container-site scroll-mt-90 pb-64 md:pb-80 lg:scroll-mt-130" aria-labelledby="kontakt-title">
+<section id="kontakt" class="container-site scroll-mt-88 pb-64 md:pb-80 lg:scroll-mt-128" aria-labelledby="kontakt-title">
 	<div class="box bg-contact grid gap-40 pt-32 text-white md:pt-72 lg:grid-cols-[440px_1fr] lg:gap-96">
 		<div class="flex flex-col gap-24">
 			<x-eyebrow square="bg-plum-tint">Kontakt</x-eyebrow>

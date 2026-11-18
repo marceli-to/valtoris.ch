@@ -21,12 +21,12 @@
 			@foreach ($links as $anchor => $label)
 				<a href="{{ route('home') }}#{{ $anchor }}" class="text-lg font-medium text-verdant hover:underline">{{ $label }}</a>
 			@endforeach
-			<x-button :href="route('home').'#kontakt'" variant="outline-plum">Kontakt</x-button>
+			<x-button :href="route('home').'#kontakt'" variant="outline-plum" class="w-100">Kontakt</x-button>
 		</nav>
 
 		<button
 			type="button"
-			class="-mr-10 flex size-44 cursor-pointer flex-col items-end justify-center gap-6 lg:hidden"
+			class="flex size-44 cursor-pointer flex-col items-end justify-center gap-8 lg:hidden"
 			@click="open = true"
 			aria-controls="mobile-menu"
 			:aria-expanded="open"
@@ -55,7 +55,7 @@
 				<a href="{{ route('home') }}" class="block w-124" aria-label="valtoris – zur Startseite">
 					<img src="{{ asset('images/logo-valtoris.svg') }}" alt="" width="207" height="66" class="h-auto w-full">
 				</a>
-				<button type="button" class="-mr-10 relative size-44 cursor-pointer" @click="open = false">
+				<button type="button" class="relative size-44 cursor-pointer" @click="open = false">
 					<span class="sr-only">Menü schliessen</span>
 					<span class="absolute top-1/2 left-1/2 h-2 w-26 -translate-1/2 rotate-45 bg-plum"></span>
 					<span class="absolute top-1/2 left-1/2 h-2 w-26 -translate-1/2 -rotate-45 bg-plum"></span>
@@ -64,7 +64,7 @@
 
 			<nav aria-label="Hauptnavigation" class="flex flex-col px-20">
 				@foreach ($links as $anchor => $label)
-					<a href="{{ route('home') }}#{{ $anchor }}" @click="open = false" class="border-b border-verdant-tint py-18 text-3xl leading-[1.43] font-medium text-verdant">{{ $label }}</a>
+					<a href="{{ route('home') }}#{{ $anchor }}" @click="open = false" class="border-b border-verdant-tint py-20 text-3xl leading-[1.43] font-medium text-verdant">{{ $label }}</a>
 				@endforeach
 			</nav>
 

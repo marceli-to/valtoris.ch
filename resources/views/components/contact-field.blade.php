@@ -16,7 +16,7 @@
 @php
 	$id = "kontakt-{$name}";
 	// The chevron url is relative to resources/css/app.css, where Tailwind writes the class, so Vite bundles it.
-	$control = 'peer w-full appearance-none rounded-none border-0 border-b border-white/50 bg-transparent px-0 pt-0 pb-10 text-lg text-white transition-colors placeholder:text-transparent focus:border-white focus:outline-none aria-invalid:border-amber';
+	$control = 'peer w-full appearance-none rounded-none border-0 border-b border-white/50 bg-transparent px-0 pt-0 pb-12 text-lg text-white transition-colors placeholder:text-transparent focus:border-white focus:outline-none aria-invalid:border-amber';
 	$labelClasses = 'pointer-events-none absolute top-0 left-0 origin-top-left text-sm leading-[22px] text-white/85 transition-transform duration-200 peer-focus:-translate-y-24 peer-focus:scale-87';
 	$floatsWhenFilled = $type === 'select'
 		? "peer-[:not(:has(option[value='']:checked))]:-translate-y-24 peer-[:not(:has(option[value='']:checked))]:scale-87"
@@ -45,7 +45,7 @@
 			rows="3"
 			maxlength="5000"
 			placeholder=" "
-			class="{{ $control }} h-122 resize-none"
+			class="{{ $control }} h-120 resize-none"
 			@error($name) aria-invalid="true" @enderror
 			:aria-invalid="errors.{{ $name }} ? 'true' : null"
 			aria-describedby="{{ $id }}-error"

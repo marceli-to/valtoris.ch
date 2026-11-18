@@ -107,7 +107,7 @@
 }
 
 @utility box {
-	@apply relative isolate overflow-hidden px-24 pb-139 md:px-48 md:pb-147 xl:px-64;
+	@apply relative isolate overflow-hidden px-24 pb-140 md:px-48 md:pb-148 xl:px-64;
 }
 
 @utility pattern-band {

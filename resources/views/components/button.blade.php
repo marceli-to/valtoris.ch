@@ -10,7 +10,7 @@
 
 @php
 	$classes = Arr::toCssClasses([
-		'inline-flex cursor-pointer items-center gap-8 border px-20 py-10 text-lg leading-normal font-medium transition-colors duration-200 disabled:cursor-wait disabled:opacity-70',
+		'inline-flex h-48 cursor-pointer items-center justify-center gap-8 border px-20 text-lg leading-normal font-medium transition-colors duration-200 disabled:cursor-wait disabled:opacity-70',
 		'border-white text-white hover:bg-white hover:text-plum focus-visible:outline-white' => $variant === 'outline',
 		'border-plum text-plum hover:bg-plum hover:text-white' => $variant === 'outline-plum',
 		'border-white bg-white text-plum hover:bg-transparent hover:text-white focus-visible:outline-white' => $variant === 'light',

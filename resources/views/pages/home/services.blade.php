@@ -1,5 +1,5 @@
 {{-- Seven services and a call to contact, in a grid whose 1px gaps draw the lines between the cells. --}}
-<section id="leistungen" class="container-site scroll-mt-90 pt-24 pb-80 md:pt-30 md:pb-160 lg:scroll-mt-130" aria-labelledby="leistungen-title">
+<section id="leistungen" class="container-site scroll-mt-88 pt-24 pb-80 md:pt-32 md:pb-160 lg:scroll-mt-128" aria-labelledby="leistungen-title">
 	<div class="flex flex-col gap-20 lg:flex-row lg:items-end lg:justify-between">
 		<div class="flex flex-col gap-28">
 			<x-eyebrow class="text-plum">Leistungen</x-eyebrow>
@@ -23,7 +23,7 @@
 						{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}
 					</span>
 				</div>
-				<div class="flex flex-col gap-14">
+				<div class="flex flex-col gap-16">
 					<h3 @class(['heading-card', 'text-plum' => $service['colour'] === 'plum', 'text-verdant' => $service['colour'] === 'verdant'])>
 						{!! nl2br(e($service['title']), false) !!}
 					</h3>
@@ -32,7 +32,7 @@
 			</li>
 		@endforeach
 
-		<li class="bg-cta flex min-h-280 flex-col justify-between gap-40 px-24 py-32 text-white md:px-28 md:pt-45 md:pb-40">
+		<li class="bg-cta flex min-h-280 flex-col justify-between gap-40 px-24 py-32 text-white md:px-28 md:pt-44 md:pb-40">
 			<x-eyebrow square="bg-verdant-tint">Ihr Thema?</x-eyebrow>
 			<div class="flex flex-col gap-20">
 				<p class="text-2xl font-medium tracking-[-0.005em]">Noch nicht das Richtige dabei? Interesse geweckt?</p>

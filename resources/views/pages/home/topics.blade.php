@@ -10,7 +10,7 @@
 				@foreach ($topics as $topic)
 					<li class="flex items-center text-7xl leading-[1.45] font-light whitespace-nowrap">
 						<span @class(['text-verdant' => $loop->odd, 'text-plum' => $loop->even])>{{ $topic }}</span>
-						<span @class(['mx-30 size-8 shrink-0', 'bg-plum' => $loop->odd, 'bg-verdant' => $loop->even]) aria-hidden="true"></span>
+						<span @class(['mx-32 size-8 shrink-0', 'bg-plum' => $loop->odd, 'bg-verdant' => $loop->even]) aria-hidden="true"></span>
 					</li>
 				@endforeach
 			</ul>

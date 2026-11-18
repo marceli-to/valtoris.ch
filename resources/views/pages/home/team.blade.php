@@ -1,5 +1,5 @@
 {{-- The two partners. Hovering (or tapping) a photo shows the person's quote over it. --}}
-<section id="team" class="container-site flex scroll-mt-90 flex-col gap-40 pb-80 md:pb-160 lg:scroll-mt-130 lg:flex-row lg:gap-80" aria-labelledby="team-title">
+<section id="team" class="container-site flex scroll-mt-88 flex-col gap-40 pb-80 md:pb-160 lg:scroll-mt-128 lg:flex-row lg:gap-80" aria-labelledby="team-title">
 	<div class="flex shrink-0 flex-col gap-20 md:gap-28 lg:w-400">
 		<x-eyebrow class="text-plum">Team</x-eyebrow>
 		<h2 id="team-title" class="heading-section">Menschen, die mitdenken.</h2>
@@ -26,19 +26,17 @@
 					/>
 					<div @class(['absolute inset-0 -z-10 bg-linear-to-b from-55%', 'from-plum/0 to-plum/90' => $plum, 'from-verdant/0 to-verdant/90' => ! $plum])></div>
 
-					<figcaption class="flex h-full flex-col justify-end gap-8 px-24 pb-24 text-white md:px-28">
+					<figcaption :class="quote && 'opacity-0'" class="flex h-full flex-col justify-end gap-8 px-24 pb-24 text-white transition-opacity duration-300 group-hover:opacity-0 md:px-28">
 						<x-eyebrow :square="$plum ? 'bg-plum-tint' : 'bg-verdant-tint'">{{ $person['role'] }}</x-eyebrow>
 						<span class="text-2xl font-medium tracking-[-0.01em]">{{ $person['name'] }}</span>
 					</figcaption>
 
 					<blockquote
 						:class="quote && 'opacity-100'"
-						@class([
-							'absolute inset-0 flex flex-col justify-end px-24 pt-20 pb-24 text-xl leading-[1.35] font-light tracking-[-0.01em] text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:px-28',
-							'bg-quote-plum' => $plum,
-							'bg-quote-verdant' => ! $plum,
-						])
+						class="absolute inset-0 isolate flex flex-col justify-end px-24 pt-20 pb-24 text-xl leading-[1.35] font-light tracking-[-0.01em] text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:px-28"
 					>
+						{{-- The gradient lets the portrait show through; the quote itself stays fully white. --}}
+						<div @class(['absolute inset-0 -z-10 opacity-85', 'bg-quote-plum' => $plum, 'bg-quote-verdant' => ! $plum])></div>
 						<p>«{!! nl2br(e($person['quote']), false) !!}»</p>
 					</blockquote>
 				</figure>

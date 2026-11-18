@@ -9,7 +9,7 @@
 <body class="m-0">
 	<div class="flex h-630 w-1200 flex-col gap-32 bg-white p-48">
 		<img src="{{ asset('images/logo-valtoris.svg') }}" alt="" class="h-auto w-240">
-		<div class="box bg-hero flex flex-1 flex-col justify-end px-56 pb-131">
+		<div class="box bg-hero flex flex-1 flex-col justify-end px-56 pb-132">
 			<div class="absolute inset-0 -z-20">
 				<div class="bg-hero absolute inset-0"></div>
 				<x-picture name="hero-poster" loading="eager" class="absolute inset-0 mix-blend-hard-light" img-class="size-full object-cover" />
