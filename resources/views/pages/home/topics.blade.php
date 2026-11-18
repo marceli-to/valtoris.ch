@@ -1,10 +1,10 @@
-{{-- The topic band: the words alternate green and plum, each followed by a square in the other colour. Two copies make the loop seamless. --}}
+{{-- The topic band: the words alternate green and plum, each followed by a square in the other colour. Two copies make the loop seamless. It stops while the pointer is over it (WCAG 2.2.2). --}}
 @php
 	$topics = config('valtoris.topics');
 @endphp
 
 <div class="overflow-hidden py-40 md:py-72">
-	<div class="flex w-max animate-marquee motion-reduce:animate-none">
+	<div class="flex w-max animate-marquee hover:[animation-play-state:paused] motion-reduce:animate-none">
 		@foreach ([false, true] as $copy)
 			<ul class="flex shrink-0 items-center" @if ($copy) aria-hidden="true" @else aria-label="Unsere Themen" @endif>
 				@foreach ($topics as $topic)

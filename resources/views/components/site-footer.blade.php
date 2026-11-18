@@ -23,7 +23,7 @@
 		<ul class="lg:text-right">
 			<li><a href="{{ route('impressum') }}" class="hover:underline">Impressum</a></li>
 			<li><a href="{{ route('datenschutz') }}" class="hover:underline">Datenschutz</a></li>
-			<li>Design by stoz</li>
+			<li><a href="https://stoz.ch" target="_blank" rel="noopener" class="hover:underline">Design by stoz</a></li>
 		</ul>
 	</div>
 </footer>

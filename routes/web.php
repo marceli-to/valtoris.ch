@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\RobotsController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/robots.txt', RobotsController::class)->name('robots');
 
 Route::view('/', 'pages.home')->name('home');
 Route::view('/impressum', 'pages.impressum')->name('impressum');

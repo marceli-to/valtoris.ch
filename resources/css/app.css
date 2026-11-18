@@ -92,6 +92,11 @@
 		@apply bg-plum text-white;
 	}
 
+	/* Chrome won't draw an underline thinner than 1px; at half the link's colour, set off from the letters, it reads finer. */
+	a {
+		@apply decoration-current/50 underline-offset-4;
+	}
+
 	:focus-visible {
 		@apply outline-2 outline-offset-4 outline-plum;
 	}

@@ -26,7 +26,7 @@ npm run build     # if you changed the design; commit public/build
 ./deploy.sh
 ```
 
-`deploy.sh` runs the tests, exports the committed code, installs production dependencies, syncs it to the server over SSH and runs the migrations. The server's `.env`, `public/.htaccess`, `storage/` and `database/database.sqlite` are left alone. On the server, `.env` needs `APP_URL=https://valtoris.ch`, the SMTP settings (`MAIL_*`), `TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY` and, if not info@valtoris.ch, `VALTORIS_CONTACT_RECIPIENT`.
+`deploy.sh` runs the tests, exports the committed code, installs production dependencies, syncs it to the server over SSH and runs the migrations. The server's `.env`, `public/.htaccess`, `storage/` and `database/database.sqlite` are left alone. On the server, `.env` needs `APP_ENV=production` (staging: `APP_ENV=staging`, so search engines stay out), `APP_URL=https://valtoris.ch`, the SMTP settings (`MAIL_*`), `TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY` and, if not info@valtoris.ch, `VALTORIS_CONTACT_RECIPIENT`.
 
 ## Where things are
 
@@ -44,7 +44,8 @@ npm run build     # if you changed the design; commit public/build
 | `resources/views/og-image.blade.php` | Source of `public/images/og.png`; render with `scripts/og-image.sh` (needs Herd and Chrome) |
 | `public/videos/valtoris.mp4` | The hero video (not delivered yet); until it exists, its first frame stands in |
 | `public/downloads/` | The profile PDFs; the «Beraterprofil» link appears once the file is there |
-| `public/robots.txt`, `sitemap.xml`, `llms.txt` | For search engines and LLMs; add new pages here |
+| `RobotsController` + `views/robots.blade.php` | `/robots.txt`: open with the sitemap on production (`APP_ENV=production`), `Disallow: /` everywhere else; non-production pages also get `noindex` |
+| `public/sitemap.xml`, `llms.txt` | For search engines and LLMs; add new pages here |
 
 ## Code style
 

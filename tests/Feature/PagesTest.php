@@ -65,11 +65,41 @@ class PagesTest extends TestCase
 
 	public function test_static_files_for_search_engines_exist(): void
 	{
-		foreach (['robots.txt', 'sitemap.xml', 'llms.txt', 'site.webmanifest', 'favicon.ico', 'favicon.svg', 'apple-touch-icon.png'] as $file) {
+		foreach (['sitemap.xml', 'llms.txt', 'site.webmanifest', 'favicon.ico', 'favicon.svg', 'apple-touch-icon.png'] as $file) {
 			$this->assertFileExists(public_path($file));
 		}
 
-		$this->assertStringContainsString('Sitemap: https://valtoris.ch/sitemap.xml', file_get_contents(public_path('robots.txt')));
+		// A static robots.txt would be served by the web server and bypass RobotsController.
+		$this->assertFileDoesNotExist(public_path('robots.txt'));
+	}
+
+	public function test_production_lets_crawlers_in(): void
+	{
+		$this->app['env'] = 'production';
+		config(['app.url' => 'https://valtoris.ch']);
+
+		$this->get('/robots.txt')
+			->assertOk()
+			->assertHeader('Content-Type', 'text/plain; charset=UTF-8')
+			->assertSee("Disallow:\n", false)
+			->assertDontSee('Disallow: /', false)
+			->assertSee('Sitemap: https://valtoris.ch/sitemap.xml', false);
+
+		$this->get('/')->assertDontSee('name="robots"', false);
+	}
+
+	public function test_other_environments_keep_crawlers_out(): void
+	{
+		foreach (['local', 'staging', 'testing'] as $environment) {
+			$this->app['env'] = $environment;
+
+			$this->get('/robots.txt')
+				->assertOk()
+				->assertSee('Disallow: /', false)
+				->assertDontSee('Sitemap:', false);
+
+			$this->get('/')->assertSee('<meta name="robots" content="noindex, nofollow">', false);
+		}
 	}
 
 	public function test_every_photo_variant_is_rendered(): void

@@ -17,6 +17,10 @@
 	<title>{{ $title }}</title>
 	<meta name="description" content="{{ $description }}">
 	<link rel="canonical" href="{{ $canonical }}">
+	@unless (app()->isProduction())
+		{{-- Local and staging stay out of search results, also when a crawler ignores robots.txt. --}}
+		<meta name="robots" content="noindex, nofollow">
+	@endunless
 	<meta name="theme-color" content="#ffffff">
 
 	<meta property="og:type" content="website">
