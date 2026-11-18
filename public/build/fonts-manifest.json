@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "style": {
+    "file": "assets/fonts-MYHRxTdm.css",
+    "familyStyles": {
+      "jost": "@font-face {\n  font-family: \"Jost\";\n  font-style: normal;\n  font-weight: 300 500;\n  font-display: swap;\n  src: url(\"/build/assets/jost-300-500-normal-BNsXE3cm.woff2\") format(\"woff2\");\n}\n\n@font-face {\n  font-family: \"Jost fallback\";\n  src: local(\"Arial\");\n  ascent-override: 110.35%;\n  descent-override: 38.67%;\n  line-gap-override: 0.00%;\n  size-adjust: 96.96%;\n}\n\n.font-jost {\n  font-family: var(--font-jost);\n}"
+    },
+    "variables": {
+      "jost": "--font-jost: \"Jost\", \"Jost fallback\";"
+    }
+  },
+  "preloads": [
+    {
+      "alias": "jost",
+      "family": "Jost",
+      "weight": "300 500",
+      "style": "normal",
+      "file": "assets/jost-300-500-normal-BNsXE3cm.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    }
+  ],
+  "families": {
+    "jost": {
+      "family": "Jost",
+      "variable": "--font-jost",
+      "fallbackFamily": "Jost fallback",
+      "variants": {
+        "300 500:normal": {
+          "files": [
+            {
+              "file": "assets/jost-300-500-normal-BNsXE3cm.woff2",
+              "format": "woff2"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

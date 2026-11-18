@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 300 500;
+  font-display: swap;
+  src: url("/build/assets/jost-300-500-normal-BNsXE3cm.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Jost fallback";
+  src: local("Arial");
+  ascent-override: 110.35%;
+  descent-override: 38.67%;
+  line-gap-override: 0.00%;
+  size-adjust: 96.96%;
+}
+
+:root {
+  --font-jost: "Jost", "Jost fallback";
+}
+
+.font-jost {
+  font-family: var(--font-jost);
+}

@@ -1,0 +1,37 @@
+# valtoris
+
+> valtoris gmbh ist eine Schweizer Beratung an der Schnittstelle von HR und IT. Sie verbindet Mensch und Organisation mit Technologie: SAP HCM, HR-Cloud-Systeme, Payroll und Zeitwirtschaft, Prozesse und Veränderung – mit besonderem Schwerpunkt auf dem Gesundheitswesen. Sitz: Schlossweg 2, 7026 Maladers (Graubünden).
+
+Die Website ist auf Deutsch. Alle Inhalte stehen auf der Startseite; Impressum und Datenschutz sind eigene Seiten.
+
+## Seiten
+
+- [Startseite](https://valtoris.ch/): Leistungen, Gesundheitswesen, Team und Kontaktformular
+- [Impressum](https://valtoris.ch/impressum): Firmenangaben, Handelsregister, Haftung
+- [Datenschutz](https://valtoris.ch/datenschutz): Datenschutzerklärung nach Schweizer DSG
+
+## Leistungen
+
+Sieben Kompetenzfelder, ein Anspruch: HR und IT so verbinden, dass Menschen und Organisationen gemeinsam wachsen.
+
+1. Mensch & Organisation: Wachstum entsteht dort, wo Mensch und Organisation miteinander wirken.
+2. Zusammenarbeit & Partnerschaft: Partnerschaft auf Augenhöhe – unkompliziert, ehrlich und pragmatisch.
+3. Kompetenz & Erfahrung: breite HR- und Systemerfahrung, ergänzt durch ein starkes Netzwerk.
+4. Human Resources & Information Technology: HR-Prozesse hinterfragen und gezielt moderne Technologien einsetzen.
+5. Prozesse, Payroll & Zeitwirtschaft: pragmatische Lösungen für komplexe HR-Prozesse und die Schweizer Payroll.
+6. SAP HCM & HR Cloud Systeme: Weiterentwicklung von SAP HCM und Übergang zu HR-Cloud-Lösungen, hybrid oder als kompletter Wechsel.
+7. Veränderung & Fokus: Transformation mit der richtigen Einbindung von Menschen und Organisation.
+
+## Gesundheitswesen
+
+Zukunftsfeld von valtoris: strategische Beratung und operative Umsetzung für Organisationen im Gesundheitswesen, mit dem Menschen im Mittelpunkt – von Patientinnen und Patienten über Fachpersonal bis zu Entscheidungsträgern.
+
+## Team
+
+- Linda Schwerzmann, Partner – +41 78 803 43 67, linda.schwerzmann@valtoris.ch
+- Stephan Hugi, Partner – +41 78 403 19 13, stephan.hugi@valtoris.ch
+
+## Kontakt
+
+- E-Mail: info@valtoris.ch
+- Kontaktformular: https://valtoris.ch/#kontakt

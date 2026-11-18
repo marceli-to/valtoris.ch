@@ -1,0 +1,227 @@
+@import 'tailwindcss' source(none);
+
+/* Only the templates and scripts contain classes. */
+@source '../views';
+@source '../js';
+
+@theme {
+	/* One spacing step is one pixel: px-12 is 12px, max-w-1440 is 1440px. */
+	--spacing: 0.0625rem;
+
+	--font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+
+	/* The type scale of the design, Tailwind names without text-base. Sizes in px: 14 15 16 18 22 26 28 30 32 36 40 48 56 64 100. */
+	--text-*: initial;
+	--text-xs: 0.875rem;
+	--text-xs--line-height: 1.43;
+	--text-sm: 0.9375rem;
+	--text-sm--line-height: 1.47;
+	--text-md: 1rem;
+	--text-md--line-height: 1.5;
+	--text-lg: 1.125rem;
+	--text-lg--line-height: 1.49;
+	--text-xl: 1.375rem;
+	--text-xl--line-height: 1.2;
+	--text-2xl: 1.625rem;
+	--text-2xl--line-height: 1.18;
+	--text-3xl: 1.75rem;
+	--text-3xl--line-height: 1.2;
+	--text-4xl: 1.875rem;
+	--text-4xl--line-height: 1.1;
+	--text-5xl: 2rem;
+	--text-5xl--line-height: 1.08;
+	--text-6xl: 2.25rem;
+	--text-6xl--line-height: 1.04;
+	--text-7xl: 2.5rem;
+	--text-7xl--line-height: 1.1;
+	--text-8xl: 3rem;
+	--text-8xl--line-height: 1.08;
+	--text-9xl: 3.5rem;
+	--text-9xl--line-height: 1.04;
+	--text-10xl: 4rem;
+	--text-10xl--line-height: 1.04;
+	--text-11xl: 6.25rem;
+	--text-11xl--line-height: 0.96;
+
+	/* Colours from the valtoris manual, plus the darker and lighter stops its gradients use. */
+	--color-*: initial;
+	--color-white: #ffffff;
+	--color-black: #000000;
+	--color-text: #3d3d3d;
+
+	--color-plum: #6d3165;
+	--color-plum-tint: #ae8faa;
+	--color-plum-800: #4e2249;
+	--color-plum-900: #3b1636;
+	--color-plum-950: #2a1328;
+
+	--color-verdant: #405421;
+	--color-verdant-tint: #979a79;
+	--color-verdant-300: #a3b56e;
+	--color-verdant-500: #6e8c3c;
+	--color-verdant-600: #5d792f;
+	--color-verdant-900: #263317;
+	--color-verdant-950: #1f2b0e;
+
+	--color-glacier: #36a1b9;
+	--color-glacier-tint: #abcfdc;
+	--color-glacier-300: #6ebfd2;
+	--color-glacier-700: #2a8499;
+
+	--color-amber: #f39200;
+	--color-amber-tint: #c4c894;
+
+	--color-mud: #2e2a24;
+
+	/* The topic band runs one full copy of its words to the left, then starts over. */
+	--animate-marquee: marquee 60s linear infinite;
+
+	@keyframes marquee {
+		to {
+			transform: translateX(-50%);
+		}
+	}
+}
+
+@layer base {
+	html {
+		@apply bg-white font-sans text-text antialiased motion-safe:scroll-smooth;
+	}
+
+	::selection {
+		@apply bg-plum text-white;
+	}
+
+	:focus-visible {
+		@apply outline-2 outline-offset-4 outline-plum;
+	}
+
+	[x-cloak] {
+		@apply hidden!;
+	}
+}
+
+/* Layout */
+@utility container-site {
+	@apply mx-auto w-full max-w-1440 px-20 md:px-40 xl:px-80;
+}
+
+@utility box {
+	@apply relative isolate overflow-hidden px-24 pb-139 md:px-48 md:pb-147 xl:px-64;
+}
+
+@utility pattern-band {
+	@apply pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-99 bg-[url(../images/muster.svg)] bg-size-[49.6px_99px] bg-repeat-x;
+}
+
+/* Type */
+@utility eyebrow {
+	@apply flex items-center gap-14 text-xs font-medium tracking-[0.1em] uppercase before:size-8 before:shrink-0 before:bg-(--eyebrow-square,currentColor) before:content-[''];
+}
+
+@utility heading-hero {
+	@apply text-6xl leading-[1.02] font-medium tracking-[-0.02em] text-white md:text-10xl md:leading-[0.98] xl:text-11xl xl:tracking-[-0.03em];
+}
+
+@utility heading-page {
+	@apply text-6xl font-medium tracking-[-0.025em] text-verdant md:text-10xl;
+}
+
+@utility heading-section {
+	@apply text-6xl font-medium tracking-[-0.025em] text-verdant md:text-9xl;
+}
+
+@utility heading-box {
+	@apply text-4xl font-medium tracking-[-0.015em] text-white md:text-7xl;
+}
+
+@utility heading-card {
+	@apply text-xl font-medium tracking-[-0.005em];
+}
+
+@utility text-body {
+	@apply text-md md:text-lg;
+}
+
+/* Links and buttons */
+@utility nav-link {
+	@apply text-lg font-medium text-verdant hover:underline;
+}
+
+@utility link-arrow {
+	@apply inline-flex items-center gap-8 text-sm font-medium transition-[gap] duration-200 hover:gap-14 hover:underline;
+}
+
+@utility link-arrow-icon {
+	@apply inline-block text-md font-normal;
+}
+
+@utility btn {
+	@apply inline-flex cursor-pointer items-center gap-8 border px-20 py-10 text-lg leading-normal font-medium transition-colors duration-200 disabled:cursor-wait disabled:opacity-70;
+}
+
+@utility btn-outline {
+	@apply btn border-white text-white hover:bg-white hover:text-plum focus-visible:outline-white;
+}
+
+@utility btn-outline-plum {
+	@apply btn border-plum text-plum hover:bg-plum hover:text-white;
+}
+
+@utility btn-light {
+	@apply btn border-white bg-white text-plum hover:bg-transparent hover:text-white focus-visible:outline-white;
+}
+
+/*
+ * Contact form. As in the design, a field is its label sitting on a line. The label rests
+ * where the text goes and moves up once the field has focus or a value; it comes after
+ * the input in the markup so it can follow the input's state (peer).
+ */
+@utility field {
+	@apply relative flex flex-col gap-8;
+}
+
+@utility field-label {
+	@apply pointer-events-none absolute top-0 left-0 origin-top-left text-sm leading-[22px] text-white/85 transition-transform duration-200;
+}
+
+@utility field-label-floats {
+	@apply -translate-y-24 scale-87;
+}
+
+@utility field-input {
+	@apply w-full appearance-none rounded-none border-0 border-b border-white/50 bg-transparent px-0 pt-0 pb-10 text-lg text-white transition-colors placeholder:text-transparent focus:border-white focus:outline-none aria-invalid:border-amber;
+}
+
+@utility field-select {
+	@apply field-input cursor-pointer bg-[url("data:image/svg+xml,%3Csvg_xmlns='http://www.w3.org/2000/svg'_width='12'_height='8'_fill='none'%3E%3Cpath_d='m1_1.5_5_5_5-5'_stroke='%23fff'_stroke-width='1.5'/%3E%3C/svg%3E")] bg-position-[right_4px_top_10px] bg-no-repeat pr-24 *:text-text;
+}
+
+@utility field-error {
+	@apply text-xs text-amber;
+}
+
+/* Backgrounds. The radial layers mirror the gradients in the Figma file. */
+@utility bg-hero {
+	@apply bg-[radial-gradient(41.7%_29.4%_at_79.2%_17.6%,rgb(64_84_33/0.9),transparent),radial-gradient(45.5%_31.3%_at_22.7%_65.6%,rgb(109_49_101/0.95),transparent),linear-gradient(140deg,var(--color-plum-900)_7.1%,var(--color-mud)_46.4%,var(--color-verdant-900)_78.6%)];
+}
+
+@utility bg-health {
+	@apply bg-linear-120 from-glacier-700 via-glacier via-44% to-glacier-300 to-80%;
+}
+
+@utility bg-cta {
+	@apply bg-[radial-gradient(50%_38.5%_at_15%_73.1%,rgb(163_181_110/0.35),transparent),linear-gradient(119deg,var(--color-verdant-950)_7.1%,var(--color-verdant)_42.9%,var(--color-verdant-600)_78.6%)];
+}
+
+@utility bg-contact {
+	@apply bg-[radial-gradient(38.5%_27.8%_at_61.5%_22.2%,rgb(174_143_170/0.22),transparent),radial-gradient(55.6%_38.5%_at_5.6%_65.4%,rgb(109_49_101/0.9),transparent),linear-gradient(146deg,var(--color-plum-950)_7.1%,var(--color-plum-900)_50%,var(--color-plum-800)_78.6%)];
+}
+
+@utility bg-quote-plum {
+	@apply bg-[radial-gradient(38.5%_27.8%_at_61.5%_22.2%,rgb(174_143_170/0.22),transparent),radial-gradient(55.6%_38.5%_at_5.6%_65.4%,rgb(109_49_101/0.9),transparent),linear-gradient(125deg,var(--color-plum-950)_7.1%,var(--color-plum-900)_50%,var(--color-plum-800)_78.6%)];
+}
+
+@utility bg-quote-verdant {
+	@apply bg-[radial-gradient(50%_38.5%_at_15%_73.1%,rgb(163_181_110/0.55),transparent),linear-gradient(129deg,var(--color-verdant-950)_7.1%,var(--color-verdant)_42.9%,var(--color-verdant-500)_78.6%)];
+}
