@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Deploys the committed state of this repository to valtoris.ch over SSH, using your own SSH key.
+# Deploys the committed state of this repository over SSH, using your own SSH key.
 # Run from your Mac: ./deploy.sh
 #
 # Frontend assets are built locally and committed (npm run build). The server's .env,
@@ -50,4 +50,4 @@ rsync -az --delete \
 echo "Migrating and refreshing caches…"
 ssh "$HOST" "cd '$DEST' && touch database/database.sqlite && php artisan migrate --force >/dev/null && php artisan optimize:clear >/dev/null && php artisan optimize >/dev/null"
 
-echo "Deployed $(git rev-parse --short HEAD) to https://valtoris.ch"
+echo "Deployed $(git rev-parse --short HEAD) to $HOST:$DEST"
