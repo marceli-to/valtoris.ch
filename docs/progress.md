@@ -4,6 +4,12 @@ What has been done, newest first. What's still open is in `docs/missing.md`.
 
 ## 2026-11-19
 
+### Staging on valtoris.stoz.ch
+
+- Deployed to `stozch@stoz.ch:/home/stozch/www/valtoris.ch` (Hostpoint): `DEPLOY_HOST=stozch@stoz.ch DEPLOY_PATH=/home/stozch/www/valtoris.ch ./deploy.sh`. Server `.env` with `APP_ENV=staging` (robots.txt closed, `noindex`), own `APP_KEY`, Turnstile keys, `MAIL_MAILER=log` until there's SMTP.
+- `public/.htaccess` optimised: HTTPS redirect, no dotfiles, MIME types (AVIF, WebP, WebM, woff2, webmanifest), gzip, `/build` cached a year (`immutable`), images, videos and icons a week, security headers (nosniff, Referrer-Policy, X-Frame-Options, Permissions-Policy).
+- Hostpoint selects PHP with `Use php-fpm latest` above `#@__HCP_END__@#` in `.htaccess`; `deploy.sh` reads those lines before the upload and puts them back after it.
+
 ### Hero video
 
 - stoz's `valtoris_video_header.mp4` (1920 × 1080, 10 s, 4.8 MB) compressed with ffmpeg, without audio: `public/videos/valtoris.webm` (VP9, CRF 36, 0.6 MB) and `public/videos/valtoris.mp4` (H.264, CRF 26, faststart, 1.6 MB). Browsers take the WebM first. The existing poster already matches the first frame.

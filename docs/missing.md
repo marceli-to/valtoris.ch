@@ -20,6 +20,8 @@ What's still needed before go-live. Tick it off here and note it in `docs/progre
 
 ## Deployment
 
+- [ ] **Staging (valtoris.stoz.ch)**: SMTP in the server `.env` (mails only go to `storage/logs/laravel.log` now); `valtoris.stoz.ch` in the Turnstile widget's hostnames; one test message through the form.
+
 - [ ] **Server details** for `deploy.sh`: SSH host and path.
 - [ ] **Server `.env`**: `APP_ENV=production` (staging: `APP_ENV=staging`, which keeps robots.txt closed and adds `noindex`), `APP_URL=https://valtoris.ch`, `APP_KEY`, SMTP (`MAIL_*`), `MAIL_FROM_ADDRESS`, `VALTORIS_CONTACT_RECIPIENT` if not info@valtoris.ch.
 - [x] **Cloudflare Turnstile widget** created for valtoris.ch (2026-11-18); site and secret key checked against Cloudflare.
