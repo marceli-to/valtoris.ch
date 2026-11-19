@@ -4,7 +4,7 @@ What's still needed before go-live. Tick it off here and note it in `docs/progre
 
 ## Files
 
-- [ ] **Hero video** `Valtoris_Video.mp4` (1920 × 1080, 5 MB, from stoz; Figma only says "wird separat mitgeliefert"). Goes to `public/videos/valtoris.mp4`; the hero picks it up by itself. To do with it: compress it, add a `public/videos/valtoris.webm`, and re-render `resources/images/hero-poster.png` from its first frame if the current still differs (`npm run images`).
+- [x] **Hero video** (2026-11-19): `public/videos/valtoris.webm` + `valtoris.mp4`.
 - [ ] **Profile PDFs** for the «Beraterprofil» links: `public/downloads/beraterprofil-linda-schwerzmann.pdf`, `public/downloads/beraterprofil-stephan-hugi.pdf`. The links appear once the files are there.
 
 ## Content

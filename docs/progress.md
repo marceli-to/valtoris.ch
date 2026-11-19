@@ -2,6 +2,12 @@
 
 What has been done, newest first. What's still open is in `docs/missing.md`.
 
+## 2026-11-19
+
+### Hero video
+
+- stoz's `valtoris_video_header.mp4` (1920 × 1080, 10 s, 4.8 MB) compressed with ffmpeg, without audio: `public/videos/valtoris.webm` (VP9, CRF 36, 0.6 MB) and `public/videos/valtoris.mp4` (H.264, CRF 26, faststart, 1.6 MB). Browsers take the WebM first. The existing poster already matches the first frame.
+
 ## 2026-11-18
 
 ### Accessibility check
