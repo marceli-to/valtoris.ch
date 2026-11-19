@@ -1,25 +1,80 @@
+Options -MultiViews -Indexes
+
 <IfModule mod_rewrite.c>
-    <IfModule mod_negotiation.c>
-        Options -MultiViews -Indexes
-    </IfModule>
+	RewriteEngine On
 
-    RewriteEngine On
+	# Always HTTPS (also behind a proxy that sets X-Forwarded-Proto).
+	RewriteCond %{HTTPS} !=on
+	RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+	RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-    # Handle Authorization Header
-    RewriteCond %{HTTP:Authorization} .
-    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+	# No dotfiles, except /.well-known.
+	RewriteRule (^|/)\.(?!well-known/) - [F]
 
-    # Handle X-XSRF-Token Header
-    RewriteCond %{HTTP:x-xsrf-token} .
-    RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
+	# Handle Authorization Header
+	RewriteCond %{HTTP:Authorization} .
+	RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    # Redirect Trailing Slashes If Not A Folder...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} (.+)/$
-    RewriteRule ^ %1 [L,R=301]
+	# Handle X-XSRF-Token Header
+	RewriteCond %{HTTP:x-xsrf-token} .
+	RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
 
-    # Send Requests To Front Controller...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
+	# Redirect Trailing Slashes If Not A Folder...
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_URI} (.+)/$
+	RewriteRule ^ %1 [L,R=301]
+
+	# Send Requests To Front Controller...
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^ index.php [L]
+</IfModule>
+
+# Types Apache may not know yet.
+<IfModule mod_mime.c>
+	AddType image/avif .avif
+	AddType image/webp .webp
+	AddType video/webm .webm
+	AddType font/woff2 .woff2
+	AddType application/manifest+json .webmanifest
+	AddCharset utf-8 .txt .xml .css .js .json .webmanifest .svg
+</IfModule>
+
+# Compress text; images, fonts and videos are compressed already.
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/javascript text/javascript application/json application/manifest+json image/svg+xml
+</IfModule>
+
+# Caching. Files in /build carry a content hash in their name, so they never change: cache them for a year.
+# Images, videos and icons keep their names when replaced, so browsers check back after a week.
+# Pages come from Laravel and set their own headers.
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresByType image/avif "access plus 1 week"
+	ExpiresByType image/webp "access plus 1 week"
+	ExpiresByType image/jpeg "access plus 1 week"
+	ExpiresByType image/png "access plus 1 week"
+	ExpiresByType image/svg+xml "access plus 1 week"
+	ExpiresByType image/x-icon "access plus 1 week"
+	ExpiresByType image/vnd.microsoft.icon "access plus 1 week"
+	ExpiresByType video/mp4 "access plus 1 week"
+	ExpiresByType video/webm "access plus 1 week"
+	ExpiresByType application/pdf "access plus 1 week"
+	ExpiresByType application/manifest+json "access plus 1 week"
+	ExpiresByType font/woff2 "access plus 1 year"
+	ExpiresByType text/css "access plus 1 year"
+	ExpiresByType application/javascript "access plus 1 year"
+	ExpiresByType text/javascript "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+	<If "%{REQUEST_URI} =~ m#^/build/#">
+		Header set Cache-Control "public, max-age=31536000, immutable"
+	</If>
+
+	Header always set X-Content-Type-Options "nosniff"
+	Header always set Referrer-Policy "strict-origin-when-cross-origin"
+	Header always set X-Frame-Options "SAMEORIGIN"
+	Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+	Header unset X-Powered-By
 </IfModule>
