@@ -4,6 +4,7 @@
 //   public/images/favicon-96x96.png
 //   public/apple-touch-icon.png    180 px on white (iOS fills transparency with black)
 //   public/images/icon-192.png, icon-512.png   for site.webmanifest
+//   public/images/logo-mail.png    the logo from artwork/logo-valtoris.svg at 3× its 160px width in the email, transparent (email apps don't show SVG)
 import { copyFile, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -60,4 +61,7 @@ await writeFile(join(root, 'public/apple-touch-icon.png'), await icon(180, { fil
 await writeFile(join(root, 'public/images/icon-192.png'), await icon(192, { fill: 0.72, background: white }));
 await writeFile(join(root, 'public/images/icon-512.png'), await icon(512, { fill: 0.72, background: white }));
 
-console.log('Wrote favicon.svg, favicon.ico, favicon-96x96.png, apple-touch-icon.png, icon-192.png and icon-512.png');
+const logo = await readFile(join(root, 'artwork/logo-valtoris.svg'));
+await sharp(logo, { density: 600 }).resize({ width: 480 }).png({ compressionLevel: 9, palette: true }).toFile(join(root, 'public/images/logo-mail.png'));
+
+console.log('Wrote favicon.svg, favicon.ico, favicon-96x96.png, apple-touch-icon.png, icon-192.png, icon-512.png and logo-mail.png');

@@ -4,6 +4,11 @@ What has been done, newest first. What's still open is in `docs/missing.md`.
 
 ## 2026-11-19
 
+### Contact email in valtoris style
+
+- Mail theme `resources/views/vendor/mail/html/themes/valtoris.css` (set in `config/mail.php` → `markdown.theme`) with its own frame (`html/header`, `html/message`, `text/message`): PNG logo at the top of the card (`public/images/logo-mail.png`, rendered by `npm run icons`; email apps don't show SVG), an intro line («Über das Kontaktformular … ist eine neue Anfrage eingegangen»), details as a table, the message plain below the details, German footer with the company line.
+- Details and message are HTML, not Markdown: what the sender types shows as typed (escaped), line breaks are kept. Separate plain-text version `mail/contact-message-text`. `ContactMailTest` covers both.
+
 ### Staging on valtoris.stoz.ch
 
 - Deployed to `stozch@stoz.ch:/home/stozch/www/valtoris.ch` (Hostpoint): `DEPLOY_HOST=stozch@stoz.ch DEPLOY_PATH=/home/stozch/www/valtoris.ch ./deploy.sh`. Server `.env` with `APP_ENV=staging` (robots.txt closed, `noindex`), own `APP_KEY`, Turnstile keys, `MAIL_MAILER=log` until there's SMTP.

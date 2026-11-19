@@ -1,0 +1,193 @@
+/*
+ * The valtoris mail theme. Laravel inlines these rules into every element, because many email apps
+ * drop <style> blocks; so this is plain CSS, not Tailwind. Colours and type follow app.css. Jost only
+ * shows where it's installed (Apple Mail on a Mac with it); everywhere else Helvetica or Arial stands in.
+ */
+
+body,
+body *:not(html):not(style):not(br):not(tr):not(code) {
+	box-sizing: border-box;
+	font-family: Jost, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	position: relative;
+}
+
+body {
+	-webkit-text-size-adjust: none;
+	background-color: #f5f2f4;
+	color: #3d3d3d;
+	height: 100%;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+	width: 100% !important;
+}
+
+a {
+	color: #6d3165;
+}
+
+a img {
+	border: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+h1 {
+	color: #405421;
+	font-size: 28px;
+	font-weight: 500;
+	letter-spacing: -0.02em;
+	line-height: 1.2;
+	margin: 0 0 12px;
+	text-align: left;
+}
+
+p {
+	font-size: 16px;
+	line-height: 1.5em;
+	margin: 0 0 16px;
+	text-align: left;
+}
+
+/* Layout */
+
+.wrapper {
+	background-color: #f5f2f4;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.content {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.logo-row {
+	margin: 0 0 40px;
+}
+
+.logo {
+	display: block;
+	height: auto;
+	width: 160px;
+}
+
+.body {
+	background-color: #f5f2f4;
+	margin: 0;
+	padding: 40px 0 0;
+	width: 100%;
+}
+
+.inner-body {
+	background-color: #ffffff;
+	margin: 0 auto;
+	padding: 0;
+	width: 570px;
+}
+
+.content-cell {
+	max-width: 100vw;
+	padding: 40px;
+}
+
+.intro {
+	margin: 0;
+}
+
+.lead {
+	color: #6b6b6b;
+	font-size: 15px;
+	margin: 0;
+}
+
+/* The sender's details */
+
+.details {
+	border-collapse: collapse;
+	border-top: 1px solid #e7e1e5;
+	margin: 28px 0 32px;
+	width: 100%;
+}
+
+.details-label,
+.details-value {
+	border-bottom: 1px solid #e7e1e5;
+	font-size: 15px;
+	line-height: 22px;
+	padding: 12px 0;
+	text-align: left;
+	vertical-align: top;
+}
+
+.details-label {
+	color: #8a8a8a;
+	font-size: 12px;
+	letter-spacing: 0.08em;
+	padding-right: 16px;
+	text-transform: uppercase;
+	width: 120px;
+}
+
+.details-value {
+	color: #3d3d3d;
+}
+
+/* The message itself, as plain text below the details. */
+
+.message {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.message-cell {
+	color: #3d3d3d;
+	font-size: 16px;
+	line-height: 1.6;
+	padding: 0;
+	text-align: left;
+}
+
+.subcopy {
+	border-top: 1px solid #e7e1e5;
+	margin-top: 28px;
+	padding-top: 20px;
+}
+
+.subcopy p {
+	color: #8a8a8a;
+	font-size: 13px;
+	margin: 0;
+}
+
+.footer {
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+	width: 570px;
+}
+
+.footer .content-cell {
+	padding: 24px 40px 40px;
+}
+
+.footer p {
+	color: #8a8a8a;
+	font-size: 12px;
+	line-height: 1.6em;
+	margin: 0;
+	text-align: left;
+}
+
+.footer a {
+	color: #8a8a8a;
+	text-decoration: underline;
+}
+
+.break-all {
+	word-break: break-all;
+}

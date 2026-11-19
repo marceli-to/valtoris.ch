@@ -115,4 +115,12 @@ return [
 		'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Laravel')),
 	],
 
+	// Markdown mails use the valtoris theme and frame in resources/views/vendor/mail.
+	'markdown' => [
+		'theme' => 'valtoris',
+		'paths' => [
+			resource_path('views/vendor/mail'),
+		],
+	],
+
 ];
