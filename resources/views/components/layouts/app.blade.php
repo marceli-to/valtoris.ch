@@ -7,6 +7,35 @@
 	// Built from APP_URL, so the canonical address stays the same whichever host the request came in on.
 	$canonical = rtrim(config('app.url'), '/').(request()->is('/') ? '/' : '/'.request()->path());
 	$company = config('valtoris.company');
+
+	// Built here, not inline: Blade would read '@context' in the template as its @context directive.
+	$structuredData = [
+		'@context' => 'https://schema.org',
+		'@type' => 'ProfessionalService',
+		'name' => 'valtoris',
+		'legalName' => $company['name'],
+		'description' => $description,
+		'url' => rtrim(config('app.url'), '/').'/',
+		'logo' => asset('images/logo-valtoris.svg'),
+		'image' => asset('images/og.png'),
+		'email' => $company['email'],
+		'address' => [
+			'@type' => 'PostalAddress',
+			'streetAddress' => $company['street'],
+			'postalCode' => $company['zip'],
+			'addressLocality' => $company['city'],
+			'addressRegion' => 'GR',
+			'addressCountry' => $company['country'],
+		],
+		'areaServed' => 'CH',
+		'employee' => collect(config('valtoris.team'))->map(fn (array $person) => [
+			'@type' => 'Person',
+			'name' => $person['name'],
+			'jobTitle' => $person['role'],
+			'email' => $person['email'],
+			'telephone' => $person['phone'],
+		])->all(),
+	];
 @endphp
 
 <!DOCTYPE html>
@@ -42,33 +71,7 @@
 	<link rel="manifest" href="{{ asset('site.webmanifest') }}">
 
 	<script type="application/ld+json">
-		{!! json_encode([
-			'@context' => 'https://schema.org',
-			'@type' => 'ProfessionalService',
-			'name' => 'valtoris',
-			'legalName' => $company['name'],
-			'description' => $description,
-			'url' => rtrim(config('app.url'), '/').'/',
-			'logo' => asset('images/logo-valtoris.svg'),
-			'image' => asset('images/og.png'),
-			'email' => $company['email'],
-			'address' => [
-				'@type' => 'PostalAddress',
-				'streetAddress' => $company['street'],
-				'postalCode' => $company['zip'],
-				'addressLocality' => $company['city'],
-				'addressRegion' => 'GR',
-				'addressCountry' => $company['country'],
-			],
-			'areaServed' => 'CH',
-			'employee' => collect(config('valtoris.team'))->map(fn (array $person) => [
-				'@type' => 'Person',
-				'name' => $person['name'],
-				'jobTitle' => $person['role'],
-				'email' => $person['email'],
-				'telephone' => $person['phone'],
-			])->all(),
-		], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+		{!! json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
 	</script>
 
 	{{ $head ?? '' }}

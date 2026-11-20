@@ -1,6 +1,7 @@
 <x-layouts.app>
 	<x-slot:head>
-		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+		{{-- The hero video's poster is the largest paint on load; the browser would only find it late. --}}
+		<link rel="preload" as="image" href="{{ asset('images/hero-poster-1280.jpg') }}" fetchpriority="high">
 	</x-slot:head>
 
 	@include('pages.home.hero')

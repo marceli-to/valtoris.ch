@@ -17,8 +17,18 @@ class PagesTest extends TestCase
 			->assertSee('Was wir bewegen.')
 			->assertSee('Linda Schwerzmann')
 			->assertSee('Stephan Hugi')
-			->assertSee('challenges.cloudflare.com/turnstile', false)
+			->assertSee('class="cf-turnstile"', false)
 			->assertSee('data-sitekey="'.config('services.turnstile.site_key').'"', false);
+	}
+
+	public function test_structured_data_is_valid_json_ld(): void
+	{
+		preg_match('#<script type="application/ld\+json">\s*(.*?)\s*</script>#s', $this->get('/')->getContent(), $match);
+
+		$data = json_decode($match[1] ?? '', true);
+
+		$this->assertSame('https://schema.org', $data['@context'] ?? null);
+		$this->assertSame('ProfessionalService', $data['@type']);
 	}
 
 	public function test_home_page_lists_all_seven_services(): void

@@ -44,7 +44,7 @@
 
 	<x-legal-section title="Schutz vor Spam: Cloudflare Turnstile">
 		<p>
-			Zum Schutz des Kontaktformulars vor automatisierten Anfragen setzen wir Turnstile der Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA, ein. Turnstile prüft beim Aufruf der Startseite anhand technischer Merkmale Ihres Browsers (unter anderem IP-Adresse und Browserangaben), ob eine Anfrage von einem Menschen stammt. Dabei werden keine Cookies zu Werbe- oder Analysezwecken gesetzt.
+			Zum Schutz des Kontaktformulars vor automatisierten Anfragen setzen wir Turnstile der Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA, ein. Turnstile prüft, sobald das Kontaktformular in Sicht kommt, anhand technischer Merkmale Ihres Browsers (unter anderem IP-Adresse und Browserangaben), ob eine Anfrage von einem Menschen stammt. Dabei werden keine Cookies zu Werbe- oder Analysezwecken gesetzt.
 		</p>
 		<p>
 			Dabei können Daten in die USA übermittelt werden. Cloudflare ist unter dem Swiss-U.S. Data Privacy Framework zertifiziert. Weitere Informationen finden Sie in der <a href="https://www.cloudflare.com/de-de/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Cloudflare</a>.

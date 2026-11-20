@@ -22,7 +22,7 @@
 			<x-picture
 				name="hero-poster"
 				sizes="(min-width: 1440px) 1280px, 100vw"
-				loading="eager"
+				:loading="$video ? 'lazy' : 'eager'"
 				:class="Arr::toCssClasses(['absolute inset-0 mix-blend-hard-light', 'hidden motion-reduce:block' => $video])"
 				img-class="size-full object-cover"
 			/>
