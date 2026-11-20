@@ -4,6 +4,10 @@ What has been done, newest first. What's still open is in `docs/missing.md`.
 
 ## 2026-11-19
 
+### Team photos in full resolution
+
+- `resources/images/team-linda.jpg` and `team-stephan.jpg` replaced with the 2000px originals (were the 503px Figma exports). Rendered at 400, 800 and 1200px for retina screens; the 503px variants are gone.
+
 ### Contact email in valtoris style
 
 - Mail theme `resources/views/vendor/mail/html/themes/valtoris.css` (set in `config/mail.php` → `markdown.theme`) with its own frame (`html/header`, `html/message`, `text/message`): PNG logo at the top of the card (`public/images/logo-mail.png`, rendered by `npm run icons`; email apps don't show SVG), an intro line («Über das Kontaktformular … ist eine neue Anfrage eingegangen»), details as a table, the message plain below the details, German footer with the company line.

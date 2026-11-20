@@ -1,6 +1,6 @@
 {
 	"_comment": "Photos rendered to public/images/{name}-{width}.{avif,webp,jpg} by scripts/images.mjs and used by <x-picture>. width/height are the source's, for the aspect ratio.",
-	"team-linda": { "source": "team-linda.jpg", "width": 503, "height": 503, "widths": [400, 503] },
-	"team-stephan": { "source": "team-stephan.jpg", "width": 503, "height": 503, "widths": [400, 503] },
+	"team-linda": { "source": "team-linda.jpg", "width": 2000, "height": 2000, "widths": [400, 800, 1200] },
+	"team-stephan": { "source": "team-stephan.jpg", "width": 2000, "height": 2000, "widths": [400, 800, 1200] },
 	"hero-poster": { "source": "hero-poster.png", "width": 1920, "height": 1080, "widths": [640, 1280, 1920] }
 }
