@@ -73,6 +73,9 @@
 
 	--color-mud: #2e2a24;
 
+	/* Things that come into place slow down gently at the end. */
+	--ease-reveal: cubic-bezier(0.2, 0.7, 0.2, 1);
+
 	/* The topic band runs one full copy of its words to the left, then starts over. */
 	--animate-marquee: marquee 60s linear infinite;
 
@@ -117,6 +120,21 @@
 
 @utility pattern-band {
 	@apply pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-99 bg-[url(../images/muster.svg)] bg-size-[49.6px_99px] bg-repeat-x;
+}
+
+/*
+	Reveal on scroll: the element pulls up from below as it comes into view. resources/js/reveal.js marks [data-reveal]
+	elements data-revealed; until then, and only under html.motion (set in the layout when motion is allowed), they wait
+	24px lower and transparent. Print shows everything.
+*/
+@utility reveal {
+	@apply transition-[opacity,translate] duration-800 ease-reveal;
+
+	@media screen {
+		:where(.motion) &:not([data-revealed]) {
+			@apply translate-y-24 opacity-0;
+		}
+	}
 }
 
 /* Type */

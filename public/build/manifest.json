@@ -8,7 +8,7 @@
     "src": "_jost-300-500-normal-BNsXE3cm.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BaVyaJ7j.css",
+    "file": "assets/app-DLbw011q.css",
     "name": "app",
     "names": [
       "app.css"
@@ -29,7 +29,7 @@
     "src": "resources/images/muster.svg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-C1EXmc3o.js",
+    "file": "assets/app-g2CQGGaq.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true

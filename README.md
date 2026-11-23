@@ -38,6 +38,7 @@ npm run build     # if you changed the design; commit public/build
 | `resources/views/components/` | Layout (head, meta, JSON-LD), header with the mobile menu, footer, `<x-picture>`, and the UI pieces `<x-button>`, `<x-link-arrow>`, `<x-eyebrow>`, `<x-contact-field>` |
 | `resources/css/app.css` | Theme: 1px spacing unit (`px-12` = 12px), the type scale (`text-xs` … `text-11xl`, no `text-base`), colours; `@utility` classes only for layout, headings and the gradient backgrounds |
 | `resources/js/contact-form.js` | Posts the contact form in the background; without JavaScript it posts normally |
+| `resources/js/reveal.js` | Reveal on scroll: marks `[data-reveal]` elements as they come into view; the `reveal` utility in `app.css` pulls them up from below. Off with reduced motion or without JavaScript |
 | `app/Http/Controllers/ContactController.php` | → `ContactRequest` (validation + `Rules\Turnstile`) → `Actions\Contact\SubmitContactMessage` (stores, then mails) → `ContactMessageResource` |
 | `resources/images/` | Photo sources and `images.json`; `npm run images` renders AVIF/WebP/JPEG per width to `public/images` |
 | `artwork/signet.svg` | Source of the favicons; `npm run icons` renders them |

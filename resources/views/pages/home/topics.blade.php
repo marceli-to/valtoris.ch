@@ -3,7 +3,7 @@
 	$topics = config('valtoris.topics');
 @endphp
 
-<div class="overflow-hidden py-40 md:py-72">
+<div class="reveal overflow-hidden py-40 md:py-72" data-reveal>
 	<div class="flex w-max animate-marquee hover:[animation-play-state:paused] motion-reduce:animate-none">
 		@foreach ([false, true] as $copy)
 			<ul class="flex shrink-0 items-center" @if ($copy) aria-hidden="true" @else aria-label="Unsere Themen" @endif>

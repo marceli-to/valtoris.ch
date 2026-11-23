@@ -74,6 +74,14 @@
 		{!! json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
 	</script>
 
+	{{-- Lets the reveal animations hold elements back before the first paint. If the script hasn't taken over after three seconds, everything shows. --}}
+	<script>
+		if (! matchMedia('(prefers-reduced-motion: reduce)').matches) {
+			document.documentElement.classList.add('motion');
+			setTimeout(() => window.valtorisReveal || document.documentElement.classList.remove('motion'), 3000);
+		}
+	</script>
+
 	{{ $head ?? '' }}
 
 	@fonts

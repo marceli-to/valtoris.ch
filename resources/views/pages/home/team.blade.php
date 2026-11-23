@@ -1,9 +1,9 @@
 {{-- The two partners. Hovering (or tapping) a photo shows the person's quote over it. --}}
 <section id="team" class="container-site flex scroll-mt-88 flex-col gap-40 pb-80 md:pb-160 lg:scroll-mt-128 lg:flex-row lg:gap-80" aria-labelledby="team-title">
 	<div class="flex shrink-0 flex-col gap-20 md:gap-28 lg:w-400">
-		<x-eyebrow class="text-plum">Team</x-eyebrow>
-		<h2 id="team-title" class="heading-section">Menschen, die mitdenken.</h2>
-		<p class="text-body">
+		<x-eyebrow class="reveal text-plum" data-reveal>Team</x-eyebrow>
+		<h2 id="team-title" class="heading-section reveal" data-reveal>Menschen, die mitdenken.</h2>
+		<p class="text-body reveal" data-reveal>
 			Zwei Partner, ein Anspruch: Kompetenz statt Bauchgefühl und Zusammenarbeit auf Augenhöhe – unkompliziert, ehrlich und pragmatisch.
 		</p>
 	</div>
@@ -15,7 +15,7 @@
 				$profile = file_exists(public_path($person['profile'])) ? $person['profile'] : null;
 			@endphp
 
-			<article class="flex flex-col gap-20 md:gap-24">
+			<article data-reveal class="reveal flex flex-col gap-20 md:gap-24">
 				<figure x-data="{ quote: false }" @click="quote = ! quote" @mouseleave="quote = false" class="group relative isolate h-400 cursor-default overflow-hidden md:h-420">
 					<x-picture
 						:name="$person['photo']"

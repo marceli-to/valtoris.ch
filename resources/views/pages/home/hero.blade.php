@@ -31,11 +31,11 @@
 		</div>
 
 		<div class="flex flex-col gap-28 md:gap-48">
-			<h1 id="hero-title" class="heading-hero">
+			<h1 id="hero-title" class="heading-hero reveal" data-reveal>
 				Wo <span class="text-plum-tint">HR&nbsp;&amp; Technologie</span><br class="max-sm:hidden">
 				zusammen&shy;kommen.
 			</h1>
-			<div class="flex flex-col items-start gap-32">
+			<div class="reveal flex flex-col items-start gap-32" data-reveal>
 				<p class="text-body max-w-540 text-white/85">
 					Wir verbinden HR und IT, Mensch und Organisation. Ob SAP HCM, Cloud-Systeme oder Payroll: Wir schaffen Klarheit, vereinfachen Prozesse und begleiten Veränderung – pragmatisch, partnerschaftlich und technologiegestützt.
 				</p>

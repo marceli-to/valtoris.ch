@@ -2,6 +2,14 @@
 
 What has been done, newest first. What's still open is in `docs/missing.md`.
 
+## 2026-11-23
+
+### Elements pull up from below (client's wish: «heranziehen»)
+
+- `resources/js/reveal.js` (IntersectionObserver) marks `[data-reveal]` elements `data-revealed` as they scroll into view; the `reveal` utility in `app.css` moves them up 24px and fades them in (800 ms, `ease-reveal`). Elements arriving together follow each other 90 ms apart in page order; `data-reveal-delay` adds to it. Used on the hero text, topic band, section headings and texts, the contents of the service cells (not the cells: the grid's line colour would show through while they fade), team cards and the contact column.
+- The hidden starting state only applies under `html.motion`, set by an inline script in the layout head when reduced motion is off; if `reveal.js` hasn't run after 3 s the class is dropped and everything shows. Without JavaScript nothing is hidden; print shows everything.
+- A first round also had the boxes opening up, hero lines rising from a mask, the video zooming, the pattern bands drawing in and the portraits zooming on hover. The client asked for something calmer, so only the pull-up stayed.
+
 ## 2026-11-19
 
 ### Team photos in full resolution

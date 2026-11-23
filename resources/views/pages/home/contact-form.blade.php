@@ -3,7 +3,7 @@
 	and swaps itself for the thank-you note; without, the page reloads with errors or the note.
 	The fields are <x-contact-field>.
 --}}
-<div x-data="contactForm" class="lg:pt-8">
+<div x-data="contactForm" data-reveal class="reveal lg:pt-8">
 	@if (session('contact_sent'))
 		<div role="status" class="flex flex-col gap-16">
 			<p class="text-2xl font-medium">Vielen Dank für Ihre Nachricht.</p>
