@@ -20,6 +20,7 @@ What's still needed before go-live. Tick it off here and note it in `docs/progre
 
 ## Deployment
 
+- [ ] **Deploy the reveal animation to staging** (committed 2026-11-23, `bf1f5a5`) so the client can see it: `DEPLOY_HOST=stozch@stoz.ch DEPLOY_PATH=/home/stozch/www/valtoris.ch ./deploy.sh` from your own terminal.
 - [ ] **Staging (valtoris.stoz.ch)**: SMTP in the server `.env` (mails only go to `storage/logs/laravel.log` now); `valtoris.stoz.ch` in the Turnstile widget's hostnames; one test message through the form.
 
 - [ ] **Server details** for `deploy.sh`: SSH host and path.
