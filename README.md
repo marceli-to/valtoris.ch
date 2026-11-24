@@ -45,6 +45,7 @@ npm run build     # if you changed the design; commit public/build
 | `resources/views/og-image.blade.php` | Source of `public/images/og.png`; render with `scripts/og-image.sh` (needs Herd and Chrome) |
 | `public/videos/valtoris.mp4` | The hero video (not delivered yet); until it exists, its first frame stands in |
 | `public/downloads/` | The profile PDFs; the «Beraterprofil» link appears once the file is there |
+| `VCardController` + `Actions/Team/BuildVCard` | `/visitenkarte/{slug}.vcf`: the team members' business cards, built from `config/valtoris.php` |
 | `RobotsController` + `views/robots.blade.php` | `/robots.txt`: open with the sitemap on production (`APP_ENV=production`), `Disallow: /` everywhere else; non-production pages also get `noindex` |
 | `public/sitemap.xml`, `llms.txt` | For search engines and LLMs; add new pages here |
 

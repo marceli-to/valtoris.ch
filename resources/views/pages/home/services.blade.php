@@ -33,9 +33,9 @@
 		@endforeach
 
 		<li class="bg-cta flex min-h-280 flex-col justify-between gap-40 px-24 py-32 text-white md:px-28 md:pt-44 md:pb-40">
-			<x-eyebrow square="bg-verdant-tint" class="reveal" data-reveal>Ihr Thema?</x-eyebrow>
+			<x-eyebrow square="bg-verdant-tint" class="reveal" data-reveal>Interesse geweckt?</x-eyebrow>
 			<div class="reveal flex flex-col gap-20" data-reveal>
-				<p class="text-2xl font-medium tracking-[-0.005em]">Noch nicht das Richtige dabei? Interesse geweckt?</p>
+				<p class="text-2xl font-medium tracking-[-0.005em]">Noch nicht das Richtige dabei?</p>
 				<x-link-arrow href="#kontakt">Jetzt Kontakt aufnehmen</x-link-arrow>
 			</div>
 		</li>

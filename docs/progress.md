@@ -2,6 +2,13 @@
 
 What has been done, newest first. What's still open is in `docs/missing.md`.
 
+## 2026-11-24
+
+### Corrections from valtoris (Dennis's mail of 24.11.)
+
+- Call-to-action cell in «Leistungen»: eyebrow «Interesse geweckt?» (was «Ihr Thema?»), text «Noch nicht das Richtige dabei?» (was «… dabei? Interesse geweckt?»), «Jetzt Kontakt aufnehmen →» unchanged.
+- Team: below phone and email a line «Visitenkarte | Beraterprofil» (plum, replaces the divider and the «Beraterprofil →» arrow link). The business card is generated, not a file: `/visitenkarte/{slug}.vcf` → `VCardController` → `Actions\Team\BuildVCard` builds a vCard 3.0 from `config/valtoris.php` (name, role, mobile, email, company address, website, the 400px portrait). The «Beraterprofil» part still only shows once the PDF is in `public/downloads`. `VCardTest` covers it.
+
 ## 2026-11-23
 
 ### Elements pull up from below (client's wish: «heranziehen»)

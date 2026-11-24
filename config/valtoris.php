@@ -84,10 +84,12 @@ return [
 		],
 	],
 
-	// Profile PDFs go to public/downloads; the link only shows once the file is there.
+	// Profile PDFs go to public/downloads; the link only shows once the file is there. The business card
+	// (/visitenkarte/{slug}.vcf) is built from these details.
 	'team' => [
 		[
 			'name' => 'Linda Schwerzmann',
+			'slug' => 'linda-schwerzmann',
 			'role' => 'Partner',
 			'phone' => '+41 78 803 43 67',
 			'email' => 'linda.schwerzmann@valtoris.ch',
@@ -98,6 +100,7 @@ return [
 		],
 		[
 			'name' => 'Stephan Hugi',
+			'slug' => 'stephan-hugi',
 			'role' => 'Partner',
 			'phone' => '+41 78 403 19 13',
 			'email' => 'stephan.hugi@valtoris.ch',

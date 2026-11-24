@@ -41,18 +41,17 @@
 					</blockquote>
 				</figure>
 
-				<p class="flex flex-col gap-4 text-md">
+				<div class="flex flex-col gap-4 text-md">
 					<a href="tel:{{ str_replace(' ', '', $person['phone']) }}" class="self-start hover:underline">{{ $person['phone'] }}</a>
 					<a href="mailto:{{ $person['email'] }}" class="self-start hover:underline">{{ $person['email'] }}</a>
-				</p>
-
-				@if ($profile)
-					<div class="h-px bg-verdant-tint"></div>
-					<x-link-arrow :href="asset($profile)" class="text-plum" target="_blank" rel="noopener">
-						Beraterprofil
-						<x-slot:after><span class="sr-only">von {{ $person['name'] }} (PDF)</span></x-slot:after>
-					</x-link-arrow>
-				@endif
+					<p class="flex flex-wrap gap-x-8 text-plum">
+						<a href="{{ route('vcard', $person['slug']) }}" class="hover:underline">Visitenkarte<span class="sr-only"> von {{ $person['name'] }} (vCard)</span></a>
+						@if ($profile)
+							<span aria-hidden="true">|</span>
+							<a href="{{ asset($profile) }}" target="_blank" rel="noopener" class="hover:underline">Beraterprofil<span class="sr-only"> von {{ $person['name'] }} (PDF)</span></a>
+						@endif
+					</p>
+				</div>
 			</article>
 		@endforeach
 	</div>
