@@ -5,7 +5,7 @@ What's still needed before go-live. Tick it off here and note it in `docs/progre
 ## Files
 
 - [x] **Hero video** (2026-11-19): `public/videos/valtoris.webm` + `valtoris.mp4`.
-- [ ] **Profile PDFs** for the «Beraterprofil» links (Dennis sent them on 24.11. as `valtoris_Linda_Schwerzmann.pdf` / `valtoris_Stephan_Hugi.pdf`; Linda's footer has the typo `info@valtrois.ch`, ask for a corrected file): `public/downloads/beraterprofil-linda-schwerzmann.pdf`, `public/downloads/beraterprofil-stephan-hugi.pdf`. The links appear once the files are there.
+- [ ] **Corrected profile PDFs**: the ones in `public/downloads/` (from Dennis, 24.11.) are online but both footers have the typo `info@valtrois.ch`. Asked for fixed files; replace them under the same names (`beraterprofil-linda-schwerzmann.pdf`, `beraterprofil-stephan-hugi.pdf`).
 
 ## Content
 
