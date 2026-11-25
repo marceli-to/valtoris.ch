@@ -16,8 +16,8 @@ return [
 		'email' => 'info@valtoris.ch',
 		'website' => 'www.valtoris.ch',
 		'tagline' => 'HR · IT · Consulting',
-		// The UID from the commercial register (CHE-123.456.789) for the Impressum. TODO: fill in.
-		'uid' => null,
+		// The UID from the commercial register, for the Impressum.
+		'uid' => 'CHE-210.185.669',
 	],
 
 	// Named in the privacy policy. TODO: confirm once the server is known.

@@ -5,12 +5,12 @@ What's still needed before go-live. Tick it off here and note it in `docs/progre
 ## Files
 
 - [x] **Hero video** (2026-11-19): `public/videos/valtoris.webm` + `valtoris.mp4`.
-- [ ] **Corrected profile PDFs**: the ones in `public/downloads/` (from Dennis, 24.11.) are online but both footers have the typo `info@valtrois.ch`. Asked for fixed files; replace them under the same names (`beraterprofil-linda-schwerzmann.pdf`, `beraterprofil-stephan-hugi.pdf`).
+- [x] **Corrected profile PDFs** (2026-11-25): replaced in `public/downloads/`, footer now `info@valtoris.ch`.
 
 ## Content
 
-- [ ] **UID number** for the Impressum: `config/valtoris.php` → `company.uid` (until then it shows `CHE-XXX.XXX.XXX`).
-- [ ] **Review of the legal texts** by valtoris. Assumptions to confirm: both partners represent the company (Impressum), hosting at Hostpoint (`config/valtoris.php` → `hosting`, Datenschutz).
+- [x] **UID number** (2026-11-25, from Dennis): `CHE-210.185.669` in `config/valtoris.php` → `company.uid`.
+- [ ] **Review of the legal texts** by valtoris. Impressum confirmed by Dennis on 25.11. (both partners represent the company). Still to confirm: hosting at Hostpoint (`config/valtoris.php` → `hosting`, Datenschutz).
 
 ## Accessibility
 
@@ -20,7 +20,7 @@ What's still needed before go-live. Tick it off here and note it in `docs/progre
 
 ## Deployment
 
-- [ ] **Deploy the 24.11. changes to staging** (CTA wording, «Visitenkarte | Beraterprofil», profile PDFs; up to `b82efd8`) and tell Dennis: `DEPLOY_HOST=stozch@stoz.ch DEPLOY_PATH=/home/stozch/www/valtoris.ch ./deploy.sh` from your own terminal.
+- [ ] **Deploy to staging** (24.11. changes: CTA wording, «Visitenkarte | Beraterprofil», profile PDFs; 25.11.: Impressum with UID, corrected PDFs) and tell Dennis: `DEPLOY_HOST=stozch@stoz.ch DEPLOY_PATH=/home/stozch/www/valtoris.ch ./deploy.sh` from your own terminal.
 - [ ] **Staging (valtoris.stoz.ch)**: SMTP in the server `.env` (mails only go to `storage/logs/laravel.log` now); `valtoris.stoz.ch` in the Turnstile widget's hostnames; one test message through the form.
 
 - [ ] **Server details** for `deploy.sh`: SSH host and path.

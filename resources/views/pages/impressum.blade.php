@@ -9,13 +9,13 @@
 			{{ $company['name'] }}<br>
 			{{ $company['street'] }}<br>
 			{{ $company['zip'] }} {{ $company['city'] }}<br>
-			Schweiz
+			Schweiz<br>
+			<a href="mailto:{{ $company['email'] }}">{{ $company['email'] }}</a>
 		</p>
 		<p>Vertreten durch {{ collect($team)->pluck('name')->join(', ', ' und ') }}.</p>
 	</x-legal-section>
 
 	<x-legal-section title="Kontakt">
-		<p>E-Mail: <a href="mailto:{{ $company['email'] }}">{{ $company['email'] }}</a></p>
 		<p>
 			@foreach ($team as $person)
 				{{ $person['name'] }}: <a href="tel:{{ str_replace(' ', '', $person['phone']) }}">{{ $person['phone'] }}</a>@if (! $loop->last)<br>@endif
@@ -26,7 +26,7 @@
 	<x-legal-section title="Handelsregister">
 		<p>
 			Eingetragen im Handelsregister des Kantons Graubünden.<br>
-			Unternehmens-Identifikationsnummer (UID): {{ config('valtoris.company.uid') ?? 'CHE-XXX.XXX.XXX' }}
+			Unternehmens-Identifikationsnummer (UID): {{ $company['uid'] }}
 		</p>
 	</x-legal-section>
 
