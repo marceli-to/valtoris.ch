@@ -7,6 +7,7 @@ What has been done, newest first. What's still open is in `docs/missing.md`.
 ### Impressum and profile PDFs (Dennis's mail of 25.11.)
 
 - Impressum: «Verantwortlich für den Inhalt» now ends with the email, as in Dennis's text (removed from «Kontakt», which keeps the phone numbers). UID `CHE-210.185.669` in `config/valtoris.php` → `company.uid`.
+- Impressum: «Programmierung: marceli.to» below «Gestaltung: stoz».
 - Corrected profile PDFs (footer `info@valtoris.ch`) replace the ones in `public/downloads/`.
 
 ## 2026-11-24

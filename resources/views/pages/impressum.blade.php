@@ -43,6 +43,9 @@
 		<p>
 			Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos, Grafiken oder anderen Dateien auf dieser Website gehören ausschliesslich der {{ $company['name'] }} oder den speziell genannten Rechteinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.
 		</p>
-		<p>Gestaltung: <a href="https://stoz.ch" target="_blank" rel="noopener">stoz</a></p>
+		<p>
+			Gestaltung: <a href="https://stoz.ch" target="_blank" rel="noopener">stoz</a><br>
+			Programmierung: <a href="https://marceli.to" target="_blank" rel="noopener">marceli.to</a>
+		</p>
 	</x-legal-section>
 </x-legal-page>
